@@ -28,7 +28,7 @@ public class StudentDAOImpl implements StudentDAO {
             transaction.begin();
             entityManager.persist(student);
             transaction.commit();
-        } catch (Exception e) {
+        } finally {
             entityManager.close();
         }
     }
